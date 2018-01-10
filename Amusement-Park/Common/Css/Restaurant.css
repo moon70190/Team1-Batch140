@@ -1,0 +1,61 @@
+#main {
+    background-color: #E14603;
+}
+
+#on-main {
+    position: relative;
+    z-index: 1;
+    background-color: white;
+    margin: 3% 13%;
+
+
+}
+
+#carouselRes {
+    position: relative;
+    margin: 0 auto;
+    padding: 5px;
+    z-index: 2;
+
+}
+
+.carousel-item img {
+    width: 985px;
+    height: 485px;
+    border: 3px solid white;
+    border-radius: 13px;
+}
+
+.on-carousel{
+    position: relative;
+    z-index: 3;
+    border: 3px solid white;
+    border-radius: 4px;
+    margin: 0 auto;
+}
+.carousel-indicators li{
+    background-color: #686868;
+}
+
+
+.easy {
+    text-align: center;
+}
+
+.price {
+    color: #d31a1f;
+}
+
+.add-cart {
+    margin: 0 0 13px 0;
+
+}
+
+p {
+    color: #7F7F7F;
+    font-size: 15px;
+}
+
+h4 {
+    color: #7F7F7F;
+}

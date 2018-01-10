@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Header</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="Css/Header.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="Js/angular.min.js"></script>
+    <style>
+        /*#return-to-top{*/
+            /*position: fixed;*/
+            /*bottom: 20px;*/
+            /*right: 20px;*/
+            /*background: rgb(0, 0, 0);*/
+            /*background: rgba(0, 0, 0, 0.6);*/
+            /*width: 50px;*/
+            /*height: 50px;*/
+            /*display: block;*/
+            /*text-decoration: none;*/
+            /*border-radius: 35px;*/
+            /*transition: all 0.5s ease;*/
+        /*}*/
+
+        /*#return-to-top span {*/
+            /*color: #fff;*/
+            /*margin: 0;*/
+            /*position: relative;*/
+            /*left: 15px;*/
+            /*top: 13px;*/
+            /*font-size: 19px;*/
+            /*transition: all 0.3s ease;*/
+        /*}*/
+
+        /*#return-to-top:hover {*/
+            /*background: rgba(0, 0, 0, 0.9);*/
+        /*}*/
+
+        /*#return-to-top:hover span {*/
+            /*color: #fff;*/
+            /*top: 5px;*/
+        /*}*/
+    </style>
+
+
+    <script>
+        $(document).ready(function () {
+            $(".navbar").affix({offset: {top: $("header").outerHeight(true)}});
+        });
+
+
+        var app = angular.module('cusApp', []);
+        app.controller('cusController', function ($scope) {
+            $scope.Customer = {name: '', pwd: ''};
+            $scope.showUser = false;
+            $scope.myClick = function () {
+                $scope.showUser = !$scope.showUser;
+            }
+        });
+
+
+
+
+//        $(window).scroll(function() {
+        //            if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        //                $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        //            } else {
+        //                $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+        //            }
+        //        });
+        //        $('#return-to-top').click(function() {      // When arrow is clicked
+        //            $('body,html').animate({
+        //                scrollTop : 0                       // Scroll to top of body
+        //            }, 1200);
+        //        });
+
+
+    </script>
+
+
+
+</head>
+<body>
+
+<!-- Return to top -->
+<!--<a id="return-to-top" href="#">-->
+    <!--<span class="glyphicon glyphicon-arrow-up"></span>-->
+<!--</a>-->
+
+
+<header>
+    <div class="main-header" ng-app="cusApp" ng-controller="cusController">
+
+        <div class="container">
+
+            <div class="hidden-xs col-sm-12 col-md-7">
+                <h2 class="special">Merciado Amusement Park</h2>
+            </div>
+
+            <div class="hidden-xs hidden-sm col-md-5">
+
+                <form class="form-inline" action="">
+                    <div class="form-group">
+                        <label for="name">Name: </label>
+
+                        <input type="text" class="form-control" id="name" ng-model="Customer.name">
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="pwd">Password: </label>
+
+                        <input type="password" class="form-control" id="pwd" ng-model="Customer.pwd">
+
+                    </div>
+                    <button type="submit" class="btn btn-info" id="login" ng-click="myClick()">Login</button>
+                </form>
+
+
+            </div>
+        </div>
+
+
+        <nav class="navbar navbar-default ">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#mainNav">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a href="#" class="navbar-brand visible-xs">Merciado Amusement Park</a>
+                </div>
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="nav navbar-nav">
+                        <li><a href="">Home</a></li>
+                        <li class="dropdown">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Places to Visit
+                                <span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="Restaurant.html">Restaurant</a></li>
+                                <li><a href="#">Gallery</a></li>
+                                <li><a href="#">Entertainment</a></li>
+                                <li><a href="#">Attraction</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Online Ticket</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="Registration.html">Registration</a></li>
+                        <li><a href="#">About Us</a></li>
+                        <li></li>
+                    </ul>
+
+                    <!--Right Nav -->
+                    <ul class="nav navbar-nav navbar-right hidden-xs hidden-sm">
+                        <li><a href="#" ng-show="showUser"><span class="glyphicon glyphicon-user"></span>{{Customer.name}}</a>
+                        </li>
+                        <li><a href="#"><span id="quantity">(0) <span class="glyphicon glyphicon-shopping-cart"></span></span>
+                            Cart</a></li>
+                    </ul>
+
+                </div>
+            </div>
+        </nav>
+
+
+    </div>
+</header>
+<div style="height: 3500px"></div>
+</body>
+</html>
