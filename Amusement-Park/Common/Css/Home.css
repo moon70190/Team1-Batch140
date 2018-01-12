@@ -1,0 +1,15 @@
+.row img{
+    border-radius: 20px;
+}
+.carousel-inner {
+    width: 100%;
+}
+.row1 img{
+    border-radius: 20px;
+}
+.row2 h3 {
+    margin-right: 20%;
+}
+.row2 img{
+    margin-left: 10%;
+}
